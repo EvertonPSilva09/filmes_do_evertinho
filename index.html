@@ -1,70 +1,101 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Filmes do Evertinho</title>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Filmes do Evertinho</title>
-
-  <nav class="navbar navbar-expand-lg bg-body-tertiary">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">FE</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="./index.html">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Top Filmes</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/register/register.html">Cadastre-se</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link">Login</a>
-          </li>
-        </ul>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">FE</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="../index.html"
+                >Home</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Top Filmes</a>
+            </li>
+          </ul>
+        </div>
       </div>
+      <a class="btn btn-outline-success mr-1" href="./register/register.html"
+        >Cadastrar</a
+      >
+      <a class="btn btn-outline-primary">Login</a>
+    </nav>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+
+  <body>
+    <div class="d-flex justify-content-center align-items-center mb-4">
+      <h1>Filmes do Evertinho (não é pirataria)&nbsp;</h1>
+      <label for="language-select">Selecione o idioma &nbsp;</label>
+      <select id="language-select" class="mr-2 form-select form-select-sm">
+        <option value="en-US">Inglês</option>
+        <option value="pt-BR">Português</option>
+      </select>
+
+      <form id="search-form" class="ml-2">
+        <input
+          class="form-control-sm"
+          type="text"
+          id="search-input"
+          placeholder="Pesquisar filmes..."
+        />
+        <button type="submit" class="btn btn-outline-primary">Pesquisar</button>
+      </form>
     </div>
-  </nav>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="./css/style.css" />
-</head>
+    <div
+      id="movie-carousel"
+      class="carousel slide"
+      data-ride="carousel"
+      data-interval="5000"
+    >
+      <div class="carousel-inner"></div>
+      <a
+        class="carousel-control-prev"
+        href="#movie-carousel"
+        role="button"
+        data-slide="prev"
+      >
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Anterior</span>
+      </a>
+      <a
+        class="carousel-control-next"
+        href="#movie-carousel"
+        role="button"
+        data-slide="next"
+      >
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Próximo</span>
+      </a>
+    </div>
+    <div id="movies"></div>
 
-<body>
-  <div class="d-flex justify-content-center align-items-center mb-4">
-    <h1>Filmes do Evertinho (não é pirataria)&nbsp;</h1>
-    <label for="language-select">Selecione o idioma &nbsp;</label>
-    <select id="language-select" class="mr-2 form-select form-select-sm">
-      <option value="en-US">Inglês</option>
-      <option value="pt-BR">Português</option>
-    </select>
-
-    <form id="search-form" class="ml-2">
-      <input class="form-control-sm" type="text" id="search-input" placeholder="Pesquisar filmes..." />
-      <button type="submit" class="btn btn-outline-primary">Pesquisar</button>
-    </form>
-  </div>
-  <div id="movie-carousel" class="carousel slide" data-ride="carousel" data-interval="5000">
-    <div class="carousel-inner"></div>
-    <a class="carousel-control-prev" href="#movie-carousel" role="button" data-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="sr-only">Anterior</span>
-    </a>
-    <a class="carousel-control-next" href="#movie-carousel" role="button" data-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="sr-only">Próximo</span>
-    </a>
-  </div>
-  <div id="movies"></div>
-
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
-  <script type="module" src="script.js"></script>
-</body>
-
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="script.js"></script>
+  </body>
 </html>
