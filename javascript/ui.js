@@ -20,7 +20,8 @@ function createMovieCard(movie) {
           <p class="card-text mb-auto">${movie.overview}</p>
           <p class="mt-auto"><small style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Data de lançamento: ${movie.release_date}</small></p>
           <p class="mt-auto"><small style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Classificação: ${movie.vote_average} / 10 (${movie.vote_count} votos)</small></p>
-        </div>
+          <button>Teste</button>
+          </div>
       </div>
     </div>
   `;
