@@ -1,4 +1,4 @@
-# 🎬 Movie Details Display 🍿
+# 🎬 Filmes do Evertinho 🍿
 
 Bem-vindo ao projeto Movie Details Display! Este é um pequeno e aconchegante espaço na web onde exibimos detalhes de seus filmes favoritos de uma maneira elegante e intuitiva.
 
