@@ -1,21 +1,10 @@
+const urlParams = new URLSearchParams(window.location.search);
+const movieId = urlParams.get('movie_id');
+const apiKey = "SUA-KEY";
 
-
-
-function showMovieDetails(movie) {
-  return `
-    <div class="card mb-3">
-      <img src="https://image.tmdb.org/t/p/w500${movie.backdrop_path}" class="card-img-top" alt="${movie.title}">
-      <div class="card-body">
-        <h5 class="card-title">${movie.title}</h5>
-        <p class="card-text">${movie.overview}</p>
-        <p class="card-text"><small class="text-muted">Data de lançamento: ${movie.release_date}</small></p>
-        <p class="card-text"><small class="text-muted">Classificação: ${movie.vote_average} / 10 (${movie.vote_count} votos)</small></p>
-        <p class="card-text"><small class="text-muted">Idioma original: ${movie.original_language}</small></p>
-        <p class="card-text"><small class="text-muted">Popularidade: ${movie.popularity}</small></p>
-        <p class="card-text"><small class="text-muted">Elenco principal: ${movie.cast}</small></p>
-      </div>
-    </div>
-  `;
+async function getMovieDetails(movieId) {
+  const response = await fetch(`https://api.themoviedb.org/3/movie/${movieId}?api_key=${apiKey}&language=pt-BR`);
+  return await response.json();
 }
 
 export default function renderMovieDetails(movie) {
@@ -24,3 +13,11 @@ export default function renderMovieDetails(movie) {
     "movie-details"
   ).innerHTML = `<div class="row">${movieDetailsHtml}</div>`;
 }
+
+function showMovieDetails(movie) {
+  document.getElementById('movie-title').textContent = movie.title;
+  document.getElementById('movie-description').textContent = movie.overview;
+  document.getElementById('movie-poster').src = `https://image.tmdb.org/t/p/w500${movie.backdrop_path}`;
+}
+
+getMovieDetails(movieId).then(movie => showMovieDetails(movie));
