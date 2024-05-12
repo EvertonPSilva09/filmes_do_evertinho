@@ -1,14 +1,3 @@
-function createCarouselItem(movie, index) {
-  return `
-    <div class="carousel-item ${index === 0 ? 'active' : ''}">
-    <div class="carousel-caption d-none d-md-block">
-        <h5 class="text-dark">${movie.title}</h5>
-        <p class="text-dark">${movie.overview}</p>
-      </div>
-    </div>
-  `;
-}
-
 function createMovieCard(movie) {
   return `
     <div class="col-lg-3 col-md-6 mb-4">
@@ -28,10 +17,7 @@ function createMovieCard(movie) {
 
 export function renderMovies(movies, containerId) {
   const movieCards = movies.map(createMovieCard).join("");
-  document.getElementById(containerId).innerHTML = `<div class="row">${movieCards}</div>`;
-}
-
-export function renderCarousel(movies, containerSelector) {
-  const carouselItems = movies.map(createCarouselItem).join('');
-  document.querySelector(containerSelector).innerHTML = carouselItems;
+  document.getElementById(
+    containerId
+  ).innerHTML = `<div class="row">${movieCards}</div>`;
 }
