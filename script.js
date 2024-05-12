@@ -1,5 +1,5 @@
 import { searchMovies, getPopularMovies } from "./javascript/api.js";
-import { renderMovies, renderCarousel } from "./javascript/ui.js";
+import { renderMovies } from "./javascript/ui.js";
 
 document.getElementById("search-form").addEventListener("submit", function (e) {
   e.preventDefault();
@@ -12,5 +12,4 @@ document.getElementById("search-form").addEventListener("submit", function (e) {
 
 getPopularMovies().then((movies) => {
   renderMovies(movies, "movies");
-  renderCarousel(movies.slice(0, 5), "#movie-carousel .carousel-inner");
 });
